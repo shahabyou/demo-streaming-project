@@ -1,0 +1,38 @@
+
+spring:
+  profiles:
+    active: local
+
+
+---
+
+spring:
+  profiles: local
+
+
+message.response:   Hello from local producer is healty
+
+kafka.broker: localhost:9092
+enable.auto.commit: true
+auto.commit.interval.ms:  100
+group.id: group1
+kafka.auto.offset.reset: earliest
+kafka.topic: my-topic
+
+
+---
+
+spring:
+  profiles: dev
+
+message.response:   Hello from dev producer is healty
+
+---
+
+spring:
+  profiles: prod
+
+message.response:   Hello from PROD producer is healty
+
+
+---
